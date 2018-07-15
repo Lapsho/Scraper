@@ -1,0 +1,52 @@
+.body {
+    background-color: gray;
+    font-family: "Helvetica", serif;
+    color: lightgray;
+}
+
+.container {
+    background-color: dimgray;
+    border: 1px;
+    border-color: red;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.red-title {
+    font-family: "Playball";
+    color: #8B0000;
+    text-align: center;
+}
+
+.red-bottom {
+    background-color: #8B0000;
+    color: lightgray;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.background-gray {
+    background-color: lightgray;
+}
+
+.text-red {
+    color: #8B0000;
+}
+
+@font-face {
+    font-family: "Helvetica";
+    src: url("/style/fonts/Helvetica.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Playball";
+    src: url("/style/fonts/Playball.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
