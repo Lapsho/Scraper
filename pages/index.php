@@ -3,12 +3,13 @@
     <link rel="stylesheet" href="style/skin.css">
     <link rel="stylesheet" href="style/bootstrap/css/bootstrap.css">
     <script src="style/JS/Sort.js"></script>
-    <title><?php echo App::PAGE_TITLE ?></title>
+    <script src="style/JS/ajax.js"></script>
+    <title><?php echo AppController::PAGE_TITLE ?></title>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 </head>
 <body class="body ">
 <div class="container">
-    <h1 class="red-title"><?php echo App::PAGE_TITLE ?></h1>
+    <h1 class="red-title"><?php echo AppController::PAGE_TITLE ?></h1>
     <form action="/" method="get">
         <div class="form-group">
             <label for="exampleInputEmail1">INSTAGRAM SOURCES</label>
@@ -17,18 +18,18 @@
             <small id="emailHelp" class="form-text">Some bullshit.</small>
         </div>
         <button type="submit" class="btn red-bottom">Go</button>
-<!--        <button type="button" class="btn red-bottom" formmethod="get" value="images"-->
-<!--                onclick="location.href='/'">-->
-<!--            Sort images-->
-<!--        </button>-->
+        <button type="button" class="btn red-bottom" formmethod="get" value="images"
+                onclick="sortImages()">
+            Sort images
+        </button>
     </form>
 </div>
 <div class="container">
     <?php if ($_GET['request']): ?>
-        <?php $handle = new HandleRequest() ?>
+        <?php $handle = new RequestHandler() ?>
         <?php $result = $handle->handle($_GET['request']) ?>
         <?php if (is_array($result)): ?>
-            <div class="card-columns">
+            <div id="card" class="card-columns">
                 <?php foreach ($result as $image): ?>
                     <div class="card">
                         <a href="<?php echo $image['urlImage'] ?>">
@@ -47,6 +48,7 @@
         <div class="alert alert-dark" role="alert">
             enter the user's nickname (@username or username) or link in the instagram.
         </div>
+        <img src="style/images/pepper.png" class="img-fluid" alt="Responsive image">
     <?php endif ?>
 </div>
 </body>

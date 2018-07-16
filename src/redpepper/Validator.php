@@ -6,20 +6,19 @@
  * Time: 17:49
  */
 
-class Validate
+class Validator
 {
     /** checks the request for correctness and returns the link
-     *
-     * @param $request
-     * @return array|bool|string
+     * @param string $request
+     * @return bool|string
      */
-    public function validateRequest($request){
-
+    public function validateRequest(string $request)
+    {
         $findErrors = $this->viewErrors($request);
 
-        if($findErrors === false){
+        if ($findErrors === false) {
             $result = $this->createURL($request);
-        }else{
+        } else {
             $result = $findErrors;
         }
 
@@ -28,11 +27,10 @@ class Validate
 
 
     /** checks the request for correctness: if it is not correct - return errors, otherwise it returns false
-     *
-     * @param $request
-     * @return array|bool
+     * @param string $request
+     * @return bool|string
      */
-    protected function viewErrors($request)
+    protected function viewErrors(string $request)
     {
         $error = false;
 
@@ -46,13 +44,12 @@ class Validate
     }
 
 
-
     /** accepts the request and redrafts it into a link
-     *
-     * @param $request
+     * @param string $request
      * @return string
      */
-    protected function createURL($request){
+    protected function createURL(string $request)
+    {
         if (strstr($request, 'https://www.instagram.com')) {
             $username = explode('/', $request);
             $username = $username[3];

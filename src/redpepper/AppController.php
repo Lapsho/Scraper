@@ -6,15 +6,13 @@
  * Time: 20:50
  */
 
-class App
+class AppController
 {
-    /** @var string contain web page name */
+    /** @var string contain website name */
     const PAGE_TITLE = 'RED PEPPER SCRAPER';
 
-    /** require pages
-     *
-     */
-    public function controller()
+    // checks to which page the request and connects to the desired one
+    public function indexAction()
     {
         if(!isset($_GET['page']) || $_GET['page'] === '/'){
             require 'pages/index.php';

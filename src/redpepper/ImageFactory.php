@@ -12,27 +12,27 @@
  */
 class ImageFactory
 {
-    /** returns a Validate class object
-     * @return Validate
+    /** returns a Validator class object
+     * @return Validator
      */
     public function validate()
     {
-        return new Validate();
+        return new Validator();
     }
 
-    /** returns a GetData class object
-     * @return GetData
+    /** returns a DataProcessor class object
+     * @return DataProcessor
      */
     public function getData()
     {
-        return new GetData();
+        return new DataProcessor();
     }
 
-    /** returns a FetchImages class object
-     * @return FetchImages
+    /** returns a ImageFeatcher class object
+     * @return ImageFeatcher
      */
     public function fetchImages()
     {
-        return new FetchImages();
+        return new ImageFeatcher();
     }
 }

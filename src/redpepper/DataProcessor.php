@@ -6,15 +6,14 @@
  * Time: 19:43
  */
 
-class GetData
+class DataProcessor
 {
     /** gets it instagram page and parse it: if it page is private or not existing - it return massage, otherwise -
      * object with data
-     *
-     * @param $url
-     * @return bool
+     * @param string $url
+     * @return string
      */
-    public function getPage($url)
+    public function getPage(string $url)
     {
         $ch = curl_init();
 
@@ -29,7 +28,7 @@ class GetData
         /* Check for 404 (file not found). */
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         if($httpCode == 404) {
-            return 'This user is not existing (404)';
+            return 'You enter false username';
         }
 
         curl_close($ch);

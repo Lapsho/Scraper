@@ -6,9 +6,19 @@
  * Time: 23:30
  */
 
-class HandleRequest
+class RequestHandler
 {
-    public function handle($request)
+    public $factory;
+    public $validate;
+    public $getData;
+    public $fetchImages;
+
+    /** accepts a request from the user, validates, sends a request to instagram, processes it and in the case of
+     * success returns an array of images; otherwise a corresponding error
+     * @param string $request
+     * @return array|bool|string
+     */
+    public function handle(string $request)
     {
         $factory = new ImageFactory();
 

@@ -6,14 +6,13 @@
  * Time: 20:17
  */
 
-class FetchImages
+class ImageFeatcher
 {
     /** Gets URL images and thumbnails from the object and wrote it in array
-     *
-     * @param $object
+     * @param object $object
      * @return array
      */
-    public function getElements ($object): array
+    public function getElements($object)
     {
         $object = $object->edge_owner_to_timeline_media->edges;
         foreach ($object as $subObject) {
